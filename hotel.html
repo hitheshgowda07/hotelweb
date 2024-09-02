@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Booking System</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #525ac2;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+main {
+    padding: 20px;
+}
+
+.hotel-list {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.hotel-room {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+.hotel-room h3 {
+    margin-top: 0;
+}
+
+.booking-form {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.booking-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.booking-form label {
+    margin-top: 10px;
+}
+
+.booking-form input,
+.booking-form button {
+    margin-top: 5px;
+    padding: 10px;
+    font-size: 1em;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+</style>
+<body>
+
+    <header>
+        <h1>Welcome to Our Hotel Booking System</h1>
+    </header>
+
+    <main>
+        <section class="hotel-list">
+            <h2>Available Rooms</h2>
+            <div class="hotel-room">
+                <h3>Deluxe Room</h3>
+                <p>Price:10000 /per night</p>
+                <button onclick="bookRoom('Deluxe Room', 150)">Book Now</button>
+            </div>
+            <div class="hotel-room">
+                <h3>Standard Room</h3>
+                <p>Price: 8000/ per night</p>
+                <button onclick="bookRoom('Standard Room', 100)">Book Now</button>
+            </div>
+            <div class="hotel-room">
+                <h3>Suite</h3>
+                <p>Price: 16000/ per night</p>
+                <button onclick="bookRoom('Suite', 200)">Book Now</button>
+            </div>
+        </section>
+
+        <section class="booking-form">
+            <h2>Booking Form</h2>
+            <form id="bookingForm" onsubmit="submitBooking(event)">
+                <label for="roomType">Room Type:</label>
+                <input type="text" id="roomType" name="roomType" readonly>
+
+                <label for="price">Price per Night:</label>
+                <input type="text" id="price" name="price" readonly>
+
+                <label for="checkIn">Check-In Date:</label>
+                <input type="date" id="checkIn" name="checkIn" required>
+
+                <label for="checkOut">Check-Out Date:</label>
+                <input type="date" id="checkOut" name="checkOut" required>
+
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <button type="submit">Submit Booking</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Hotel Booking System</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
